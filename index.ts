@@ -3,7 +3,7 @@ import { checkForOldBackups } from './checks/backupAgeCheck';
 import { backup } from './backup/backup';
 import { returnSettings } from './settings/settings';
 
-const useTestSettings: boolean = true;
+const useTestSettings: boolean = false;
 let appSettings = returnSettings(useTestSettings);
 
 console.log(`Beginning Simple MC Backup Tool.`);
