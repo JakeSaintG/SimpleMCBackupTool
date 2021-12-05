@@ -1,7 +1,7 @@
 const findRemoveSync = require('find-remove');
 
 export const checkForOldBackups = (deleteUnitOfTime: string, deleteInterval: number) => {
-    findRemoveSync('../WorldBackUps', {
+    findRemoveSync('../WorldBackups', {
         age: {deleteUnitOfTime: deleteInterval},
         extensions: '.zip'},
     );

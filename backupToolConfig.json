@@ -1,0 +1,14 @@
+{
+    "mainSettings": {
+        "worldName": "world",
+        "saveInterval": 7200000,
+        "deleteInterval": 8,
+        "deleteUnitOfTime": "hours"
+    },
+    "testSettings": {
+        "worldName": "world",
+        "saveInterval": 60000,
+        "deleteInterval": 3,
+        "deleteUnitOfTime": "minutes"
+    }
+}

@@ -16,8 +16,8 @@ let refreshDateInfo = () => {
 
     fileData = {
         saveFileType: 'zip', //currently not used. Need to set to 'Format' type and not 'string'
-        writeFilePath: `../WorldBackUps/world${currentDTS}.zip`,
-        saveInfoFile:  `This copy of your Minecraft world was saved by a backup tool.\r\n\r\n====================Save date====================\r\n${saveDate}\r\n====================Save time====================\r\n${saveTime}\r\n\r\nThank you for using BackUpTool!`  
+        writeFilePath: `../WorldBackups/world${currentDTS}.zip`,
+        saveInfoFile:  `This copy of your Minecraft world was saved by a backup tool.\r\n\r\n====================Save date====================\r\n${saveDate}\r\n====================Save time====================\r\n${saveTime}\r\n\r\nThank you for using Simple MC Backup Tool!`  
     }
 }
 

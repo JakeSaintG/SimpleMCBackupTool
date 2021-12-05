@@ -1,30 +1,19 @@
 import { folderCheck } from './checks/folderCheck';
 import { checkForOldBackups } from './checks/backupAgeCheck';
-import { backUp } from './backUp/backUp'
+import { backup } from './backup/backup';
+import { returnSettings } from './settings/settings';
 
-console.log(`Beginning BackUpTool.`);
+const useTestSettings: boolean = true;
+let appSettings = returnSettings(useTestSettings);
 
-// let saveInterval = 7200000; //2hrs by default
-// let deleteInterval: number = 8;
-// let deleteUnitOfTime: string = 'hours'; //hours, minutes, or seconds
-
-/*===========================Testing Time Units===========================*/
-/*Comment out default time settings and uncomment below lines for testing purposes*/
-let saveInterval: number = 60000; //1min
-let deleteInterval: number = 3;
-let deleteUnitOfTime: string = 'minutes'; //hours, minutes, or seconds
-/*===========================Testing Time Units===========================*/
-
-console.log(`The world will be backed up every ${saveInterval/60000} minutes`);
+console.log(`Beginning Simple MC Backup Tool.`);
+console.log(`The world will be backed up every ${appSettings.saveInterval/60000} minutes`);
 console.log(`Use ctrl+c or cmd+c to quit.`);
 
 folderCheck();
-backUp();
+backup(appSettings.worldName);
 
 setInterval(() => {
-  checkForOldBackups(deleteUnitOfTime, deleteInterval);
-  backUp();
-}, saveInterval);
-
-
-
+  checkForOldBackups(appSettings.deleteUnitOfTime, appSettings.deleteInterval);
+  backup(appSettings.worldName);
+}, appSettings.saveInterval);
