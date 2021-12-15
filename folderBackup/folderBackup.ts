@@ -4,7 +4,7 @@ import { returnFileData } from '../fileData/fileData'
 import { logFailure, logSuccess } from '../logger/logger';
 import { IFileData } from '../fileData/IFileData';
 
-export const backup = (worldName: string) => {
+export const folderBackup = (worldName: string) => {
 
     const archive = archiver('zip', {zlib: { level: 9 }});
   

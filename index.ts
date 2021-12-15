@@ -1,6 +1,6 @@
 import { folderCheck } from './checks/folderCheck';
 import { checkForOldBackups } from './checks/backupAgeCheck';
-import { backup } from './backup/backup';
+import { folderBackup } from './folderBackup/folderBackup'; 
 import { returnSettings } from './settings/settings';
 
 const useTestSettings: boolean = false;
@@ -11,9 +11,9 @@ console.log(`The world will be backed up every ${appSettings.saveInterval/60000}
 console.log(`Use ctrl+c or cmd+c to quit.`);
 
 folderCheck();
-backup(appSettings.worldName);
+folderBackup(appSettings.worldName);
 
 setInterval(() => {
   checkForOldBackups(appSettings.deleteUnitOfTime, appSettings.deleteInterval);
-  backup(appSettings.worldName);
+  folderBackup(appSettings.worldName);
 }, appSettings.saveInterval);
