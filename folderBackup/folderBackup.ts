@@ -5,7 +5,6 @@ import { logFailure, logSuccess } from '../logger/logger';
 import { IFileData } from '../fileData/IFileData';
 
 export const folderBackup = (worldName: string) => {
-
     const archive = archiver('zip', {zlib: { level: 9 }});
   
     try {
