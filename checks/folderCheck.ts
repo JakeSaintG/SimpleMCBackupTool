@@ -1,6 +1,6 @@
 import fs from 'fs';
 
-export const folderCheck = () => {
+export const backupLocationCheck = () => {
     const dir: string = '../WorldBackups'; 
 
     if (!fs.existsSync(dir)) {
@@ -8,5 +8,5 @@ export const folderCheck = () => {
         fs.mkdirSync(dir);
         console.log(`\"WorldBackups\" folder was created.`);
     } 
-  }
+};
   
