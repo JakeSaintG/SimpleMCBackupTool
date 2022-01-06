@@ -3,12 +3,14 @@
         "worldName": "world",
         "saveInterval": 7200000,
         "deleteInterval": 36,
-        "deleteUnitOfTime": "hours"
+        "deleteUnitOfTime": "hours",
+        "backUpLocation": "../WorldBackups"
     },
     "testSettings": {
         "worldName": "world",
-        "saveInterval": 60000,
-        "deleteInterval": 5,
-        "deleteUnitOfTime": "minutes"
+        "saveInterval": 120000,
+        "deleteInterval": 7,
+        "deleteUnitOfTime": "minutes",
+        "backUpLocation": "../WorldBackupsTest"
     }
 }

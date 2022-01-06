@@ -12,10 +12,11 @@ console.log(`The world will be backed up every ${appSettings.saveInterval/60000}
 console.log(`Use ctrl+c or cmd+c to quit.`);
 
 worldFolderCheck(appSettings.worldName);
-backupLocationCheck();
-folderBackup(appSettings.worldName);
+backupLocationCheck(appSettings.backUpLocation);
+folderBackup(appSettings.worldName, appSettings.backUpLocation);
+checkForOldBackups(appSettings.deleteUnitOfTime, appSettings.deleteInterval, appSettings.backUpLocation);
 
 setInterval(() => {
-  checkForOldBackups(appSettings.deleteUnitOfTime, appSettings.deleteInterval);
-  folderBackup(appSettings.worldName);
+  checkForOldBackups(appSettings.deleteUnitOfTime, appSettings.deleteInterval, appSettings.backUpLocation);
+  folderBackup(appSettings.worldName, appSettings.backUpLocation);
 }, appSettings.saveInterval);
