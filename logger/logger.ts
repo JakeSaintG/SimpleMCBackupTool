@@ -1,7 +1,6 @@
-export const logSuccess = (output: any, size: any) => {
+export const logSuccess = (output: any) => {
     output.on('close', () => {
-        console.log(`Zip size is: ${size} bytes`);
-        console.log('Archive has been finalized. The output file can now be accessed');
+        console.log('Archive has been finalized. The output file can now be accessed.');
     });
 }
 

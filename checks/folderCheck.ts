@@ -1,7 +1,6 @@
 import fs from 'fs';
 
-export const backupLocationCheck = () => {
-    const dir: string = '../WorldBackups'; 
+export const backupLocationCheck = (dir: string) => { 
 
     if (!fs.existsSync(dir)) {
         console.log(`Location for world back ups not found.`);

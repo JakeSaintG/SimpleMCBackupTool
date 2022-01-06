@@ -2,7 +2,7 @@ const findRemoveSync = require('find-remove');
 
 let deleteInterval: number = 0;
 
-let allowedIncrementsOftime: string[] = [ //TOD: make this more useful...
+let allowedIncrementsOftime: string[] = [ //TODO: make this more useful...
     'seconds',
     'minutes',
     'hours',
@@ -26,10 +26,10 @@ const checkForAllowedTimeIntervals = (deleteUnitOfTime: string, possibleDeleteIn
     return deleteInterval;
 }
 
-export const checkForOldBackups = (deleteUnitOfTime: string, possibleDeleteInterval: number) => {
+export const checkForOldBackups = (deleteUnitOfTime: string, possibleDeleteInterval: number, backUpLocation: string) => {
     let returnedInterval = checkForAllowedTimeIntervals(deleteUnitOfTime, possibleDeleteInterval);
 
-    findRemoveSync('../WorldBackups', {    
+    findRemoveSync(backUpLocation, {    
         age: {seconds: returnedInterval},
         extensions: '.zip'},
     );

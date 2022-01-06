@@ -1,6 +1,7 @@
 import { IFileData } from "./IFileData";
 
 let fileData!: IFileData;
+let backUpFolder!: string;
 
 let refreshDateInfo = () => {
     let date: Date = new Date();
@@ -16,12 +17,13 @@ let refreshDateInfo = () => {
 
     fileData = {
         saveFileType: 'zip', //currently not used. Need to set to 'Format' type and not 'string'
-        writeFilePath: `../WorldBackups/world${currentDTS}.zip`,
+        writeFilePath: `${backUpFolder}/world${currentDTS}.zip`,
         saveInfoFile:  `This copy of your Minecraft world was saved by a backup tool.\r\n\r\n====================Save date====================\r\n${saveDate}\r\n====================Save time====================\r\n${saveTime}\r\n\r\nThank you for using Simple MC Backup Tool!`  
     }
 }
 
-export let returnFileData = () => {
+export let returnFileData = (backUpLocation: string) => {
+    backUpFolder = backUpLocation;
     refreshDateInfo();
     return fileData;
 }
